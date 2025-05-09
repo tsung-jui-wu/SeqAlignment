@@ -1,5 +1,5 @@
 import sys
-import sys
+import os
 from resources import *
 import time
 import psutil
@@ -122,6 +122,10 @@ def main():
 
     min_cost, aligned_s1, aligned_s2 = result
     memUsed = process_memory() - mem
+    
+    dir = os.path.dirname(output_file)
+    if dir:
+        os.makedirs(dir, exist_ok=True)
     
     with open(output_file, 'w') as f:
         f.write(str(min_cost))
