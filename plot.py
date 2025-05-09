@@ -160,9 +160,9 @@ def main():
     
     # Generate time vs problem size plot
     plt.figure(figsize=(12, 7))
-    plt.plot(problem_sizes, normal_times, 'o-', color='blue', label='Normal DP')
-    plt.plot(problem_sizes, efficient_times, 's-', color='red', label='Memory-Efficient DP')
-    plt.xlabel('Problem Size (Total Sequence Length)', fontsize=12)
+    plt.plot(problem_sizes, normal_times, 'o-', color='blue', label='Normal DP - O(m*n)')
+    plt.plot(problem_sizes, efficient_times, 's-', color='red', label='Memory-Efficient DP - O(m*n)')
+    plt.xlabel('Problem Size (Length of Seq1 + Seq2)', fontsize=12)
     plt.ylabel('Execution Time (ms)', fontsize=12)
     plt.title('Execution Time vs Problem Size', fontsize=14)
     plt.legend(fontsize=10)
@@ -179,14 +179,14 @@ def main():
         plt.ylabel('Execution Time (ms) - Log Scale', fontsize=12)
     
     plt.tight_layout()
-    time_plot_path = os.path.join(output_dir, 'time_comparison.png')
+    time_plot_path = os.path.join(output_dir, 'time_comparison-log.png')
     plt.savefig(time_plot_path, dpi=300)
     
     # Generate memory vs problem size plot
     plt.figure(figsize=(12, 7))
-    plt.plot(problem_sizes, normal_memories, 'o-', color='blue', label='Normal DP')
-    plt.plot(problem_sizes, efficient_memories, 's-', color='red', label='Memory-Efficient DP')
-    plt.xlabel('Problem Size (Total Sequence Length)', fontsize=12)
+    plt.plot(problem_sizes, normal_memories, 'o-', color='blue', label='Normal DP - O(m*n)')
+    plt.plot(problem_sizes, efficient_memories, 's-', color='red', label='Memory-Efficient DP - O(m)')
+    plt.xlabel('Problem Size (Length of Seq1 + Seq2)', fontsize=12)
     plt.ylabel('Memory Usage (KB)', fontsize=12)
     plt.title('Memory Usage vs Problem Size', fontsize=14)
     plt.legend(fontsize=10)
@@ -203,7 +203,7 @@ def main():
         plt.ylabel('Memory Usage (KB) - Log Scale', fontsize=12)
     
     plt.tight_layout()
-    memory_plot_path = os.path.join(output_dir, 'memory_comparison.png')
+    memory_plot_path = os.path.join(output_dir, 'memory_comparison-log.png')
     plt.savefig(memory_plot_path, dpi=300)
     
     # Save the raw data as CSV for further analysis
