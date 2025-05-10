@@ -86,9 +86,9 @@ def hirschberg(s1, s2):
     
     # Base cases
     if m == 0:
-        return '-' * n, s2
+        return '_' * n, s2
     if n == 0:
-        return s1, '-' * m
+        return s1, '_' * m
     if m == 1 or n == 1:
         return base(s1, s2)
         

@@ -97,10 +97,10 @@ def solve(s1, s2):
         elif prev_i == i-1:
             # Gap in Y
             aligned_s1.append(s1[i-1])
-            aligned_s2.append('-')
+            aligned_s2.append('_')
         else:
             # Gap in X
-            aligned_s1.append('-')
+            aligned_s1.append('_')
             aligned_s2.append(s2[j-1])
             
         i, j = prev_i, prev_j
